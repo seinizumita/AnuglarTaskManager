@@ -22,4 +22,9 @@ export class TasksComponent implements OnInit {
     .subscribe(() => (this.tasks = this.tasks.filter(t => t.id !== task.id))); //this is called after the task is deleted from the server to update the UI
   }
 
+  toggleReminder(task: Task){
+    task.reminder = !task.reminder;
+    this.taskService.updateTaskReminder(task).subscribe();
+    }
+
 }
