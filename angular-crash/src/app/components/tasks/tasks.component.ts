@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TaskService } from 'src/app/sevices/task.service';
+import { TaskService } from 'src/app/services/task.service';
 import { Task } from 'src/app/Task';
 
 @Component({
@@ -18,7 +18,7 @@ export class TasksComponent implements OnInit {
 
   deleteTask(task: Task){
     this.taskService
-    .deleteTasks(task)
+    .deleteTask(task)
     .subscribe(() => (this.tasks = this.tasks.filter(t => t.id !== task.id))); //this is called after the task is deleted from the server to update the UI
   }
 

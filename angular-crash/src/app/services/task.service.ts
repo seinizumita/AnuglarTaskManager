@@ -21,7 +21,7 @@ export class TaskService {
     return this.http.get<Task[]>(this.apiUrl) //makes it so the data is being feteched from the backend rather than being imported from a file
   }
 
-  deleteTasks(task: Task): Observable<Task>{
+  deleteTask(task: Task): Observable<Task>{
     const url = `${this.apiUrl}/${task.id}`;
         
     return this.http.delete<Task>(url);
